@@ -1,28 +1,26 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-26 11:28:27
-         compiled from "templates/staticpage.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:3222094405150373b00e2f1-19209771%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-26 11:44:14
+         compiled from "templates/footer.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:47284068851518a0eb113a5-14402966%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '59981438c9471f7d55acbb089adb3789cec0ebe1' => 
+    '4f63e634f30f7872209d2d851d50224bb5949b20' => 
     array (
-      0 => 'templates/staticpage.tpl',
-      1 => 1364211142,
+      0 => 'templates/footer.tpl',
+      1 => 1364298170,
       2 => 'file',
     ),
     'f0f109d05c64df629f4e796edc308cec65bb638f' => 
     array (
       0 => 'templates/page.tpl',
-      1 => 1364297295,
+      1 => 1364297992,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3222094405150373b00e2f1-19209771',
+  'nocache_hash' => '47284068851518a0eb113a5-14402966',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_5150373b085e23_35319671',
   'variables' => 
   array (
     'page_metadescription' => 0,
@@ -30,8 +28,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'page_seo_title' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.13',
+  'unifunc' => 'content_51518a0ec72782_66406826',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5150373b085e23_35319671')) {function content_5150373b085e23_35319671($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_51518a0ec72782_66406826')) {function content_51518a0ec72782_66406826($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -59,8 +59,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </head>
 <body>
 	
-this is the body
-
 	
 
 <!-- Placed at the end of the document so the pages load faster -->

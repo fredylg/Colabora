@@ -12,10 +12,11 @@ class Controller{
 				die('NO SUBCONTROLLER');
 			}
 		}
-		$this->template = $this->localAction($this->url_params);
-		return $this->template;
+		if($this->url_params[0] == '' )$this->url_params[0]='home';
+		$this->template ='header.tpl|nav.tpl|';
+		$this->template .= $this->localAction($this->url_params);
+		return true;
 	}
-	
 	function localAction(){
 		$pages = $this->DB->GetTable('tbl_page', 'page_deleted is null');
 		foreach ($pages as $page) {
@@ -29,6 +30,11 @@ class Controller{
 		foreach ($page as $name => $value) {
 			$this->SM->assign($name,$value);
 		}
-		return "staticpage.tpl";	
+		if($this->url_params[0] != 'home' ){
+			return "staticpage.tpl";
+		}else{
+			return "homepage.tpl";
+		}
+			
 	}
 }

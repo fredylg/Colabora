@@ -7,4 +7,4 @@ $_REQUEST = clean($_REQUEST);
 $C = new Controller($_GET['url'], $config->controllers);
 
 
-$SM->display("extends:page.tpl|".$C->template);
+$SM->display("extends:page.tpl|".$C->template."|footer.tpl");

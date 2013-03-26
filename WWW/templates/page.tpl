@@ -24,9 +24,8 @@
 <body>
 	{block name=body}{/block}
 	{block name=footer}{/block}
-
-<!-- Placed at the end of the document so the pages load faster -->
-    <script src="/includes/js/bootstrap.min.js"></script>
+	<!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/bootstrap.min.js"></script>
     <script type="text/javascript">
 	jQuery(document).ready(function(){
 		

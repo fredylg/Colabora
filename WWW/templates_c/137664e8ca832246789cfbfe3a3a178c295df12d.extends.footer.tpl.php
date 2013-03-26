@@ -1,10 +1,16 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-26 11:28:27
-         compiled from "templates/staticpage.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:3222094405150373b00e2f1-19209771%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-26 11:45:13
+         compiled from "templates/footer.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:161935310651518a49b18fc7-96225416%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '59981438c9471f7d55acbb089adb3789cec0ebe1' => 
+    '137664e8ca832246789cfbfe3a3a178c295df12d' => 
+    array (
+      0 => 'templates/footer.tpl',
+      1 => 1364298278,
+      2 => 'file',
+    ),
+    'c4b580c19a5ef8f1efda8a191e734e911af3052e' => 
     array (
       0 => 'templates/staticpage.tpl',
       1 => 1364211142,
@@ -13,16 +19,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f0f109d05c64df629f4e796edc308cec65bb638f' => 
     array (
       0 => 'templates/page.tpl',
-      1 => 1364297295,
+      1 => 1364297992,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3222094405150373b00e2f1-19209771',
+  'nocache_hash' => '161935310651518a49b18fc7-96225416',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_5150373b085e23_35319671',
   'variables' => 
   array (
     'page_metadescription' => 0,
@@ -30,8 +34,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'page_seo_title' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.13',
+  'unifunc' => 'content_51518a49be7927_68518380',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5150373b085e23_35319671')) {function content_5150373b085e23_35319671($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_51518a49be7927_68518380')) {function content_51518a49be7927_68518380($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -61,7 +67,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	
 this is the body
 
-	
+	<!-- footer -->
+   <div id="footer-container"  class="row-fluid">
+   <div class="span3 offset1"><small>&copy;Colabora 2013 All Rights Reserved.</small></div>
+   <div class="span2 offset4"><small>Digital Pleasure Inc.</small></div>
+   </div>
+   
 
 <!-- Placed at the end of the document so the pages load faster -->
     <script src="/js/bootstrap.min.js"></script>
