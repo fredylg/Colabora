@@ -1,11 +1,3 @@
-{*	This template holds the basic surrounding structure of an html page.
-
-	Variables:
-		SEO Description = {$page_metadescription}
-		SEO Keywords = {$page_metawords}
-		SEO Page title = {$page_title}
-		Company Name = {$company_name}
-*}
 <!DOCTYPE html>
 <html>
 <head>
