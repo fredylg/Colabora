@@ -27,9 +27,12 @@ class Controller{
 		//TODO -  DEAL WITH LISTING ITEMS
 	}
 	function loadPage($page){
+		GLOBAL $config;
 		foreach ($page as $name => $value) {
 			$this->SM->assign($name,$value);
 		}
+		die(printr((array)$config->staticpages));
+		$static_pages ;
 		if($this->url_params[0] != 'home' ){
 			return "staticpage.tpl";
 		}else{
