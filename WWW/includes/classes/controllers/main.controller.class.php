@@ -12,8 +12,10 @@ class Controller{
 				die('NO SUBCONTROLLER');
 			}
 		}
-		$this->templates[] ='header.tpl';
+	//	$this->templates[] ='header.tpl';//only on index
 		$this->templates[] ='nav.tpl';
+		$this->templates[] ='footer.tpl';
+		
 		//is a page...  //is static?
 		foreach ($CONFIG->pages->static_page as $sp) {
 			if($sp->url  == $this->url_params[0]){

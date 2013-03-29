@@ -1,19 +1,19 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-29 08:49:14
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-29 08:49:00
          compiled from "templates/footer.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:182970114851519353d47644-16394219%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:15302655015155557c207359-06206867%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '92915a069aa13eca9b00a60d20e7cf3af57f441f' => 
+    '579ddfbc4c5bde66f3ba2a9cce98fcba6fc90ba5' => 
     array (
       0 => 'templates/footer.tpl',
       1 => 1364299911,
       2 => 'file',
     ),
-    '751acb1ad3667f0554ba06e5ad0c1ed153ed790c' => 
+    '571b7be1a4c1d9c63385b2dd0bd578bfe4d6d489' => 
     array (
-      0 => 'templates/homepage.tpl',
-      1 => 1364542173,
+      0 => 'templates/dbpage.tpl',
+      1 => 1364300006,
       2 => 'file',
     ),
     '774b026e1c61875471dd69ed3b74619bf725dfcc' => 
@@ -35,12 +35,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '182970114851519353d47644-16394219',
+  'nocache_hash' => '15302655015155557c207359-06206867',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_51519354087aa9_52669435',
   'variables' => 
   array (
     'page_metadescription' => 0,
@@ -48,8 +46,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'page_seo_title' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.13',
+  'unifunc' => 'content_5155557c475bc6_38155994',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51519354087aa9_52669435')) {function content_51519354087aa9_52669435($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5155557c475bc6_38155994')) {function content_5155557c475bc6_38155994($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -106,56 +106,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
    </div><!-- /.navbar-inner -->
 </div><!-- /.navbar -->
 
-<header class="row-fluid" id="overview">
-       <div class="media-heading span4 offset2">
-      		<div id="slider-with-blocks-1" class="royalSlider">
-            	<div class="rsContent slide1">
-                    <h1 class="rsABlock" data-fade-effect="true" data-delay="100" >Colabora</h1>
-                    <p class=" rsABlock" data-delay="400" data-move-effect="left" >Get your projects going...</p>
-                </div>    
-                <div class="rsContent slide2">
-                     <span data-move-effect="right" class="span-slide2 rsABlock" data-delay="300"  >MAKE YOUR PROJECTS GO →</span>
-                </div>
-                <div class="rsContent slide3">
-                     <span  class="span-slide3 rsABlock txtCent" data-fade-effect="none" >FASTER!</span>
-                </div>        
-        </div>    
- </header>
- <!-- /head --> 
-   <!-- main container --> 
    <div id="main-container">
        <div class="row-fluid">
-       		<div class="span3 info-div offset1" id="first-div">
-               <p>vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia 				               consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia               dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius</p> 
-           </div>
-           <div class="span4 info-div" id="second-div">
-              <p>vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia              consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia              dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius </p>
-           </div>
-           <div class="span3 info-div" id="third-div">
-              <p>vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia               consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia              dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius 
-              </p>
-           </div>
+       	<?php echo $_smarty_tpl->tpl_vars['page_content']->value;?>
+
       </div>
-   </div><script>
-      jQuery(document).ready(function($) {
-        $(".royalSlider").royalSlider({
-			autoScaleSlider:true,
-			autoScaleSliderHeight:320,
-			fadeinLoadedSlide:true,
-			autoPlay: {
-    			enabled: true,
-    			pauseOnHover: true,
-				delay:1800
-			},
-			transitionType:'fade',
-            blockLoop: true,
-			loop: true,
-			keyboardNavEnabled: true,
-		});  
-    });
-	 </script>
+   </div>
    <!-- /main container --> 
-   
+
 	<!-- footer -->
    <div id="footer-container"  class="row-fluid">
    <div class="span3 offset1"><small>&copy;Colabora 2013 All Rights Reserved.</small></div>

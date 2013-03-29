@@ -116,3 +116,13 @@ right{
 clear{
 	clear:both;
 }
+#login{
+margin-top:100px;
+border-radius: 6px;
+box-shadow: 0 1px 3px rgba(0,0,0,0.075);
+background-color: #F5F5F5;
+border:solid thick black;
+}
+#login h1,h2,h3,a{
+color:#49AFCD;
+}

@@ -19,6 +19,7 @@ class DB{
 		".($groupby != "" ? "GROUP BY ".$groupby:"")."
 		".($orderby != "" ? "ORDER BY ".$orderby:"")." ";
 		try {
+				$this->sql = $sql;
 				$pdos = $this->pdo->prepare($sql);
 				$pdos->execute($data);
 				$res = $pdos->fetchAll(PDO::FETCH_ASSOC);
@@ -30,16 +31,16 @@ class DB{
 	}
 	
 	public function GetRow($table,$where='',$data=array(),$groupby='',$orderby=''){
-			if(empty($data))$data=array();
 			$sql = "SELECT * FROM {$table} 
 			".($where != "" ? "WHERE ".$where." ":"")."
 			".($groupby != "" ? "GROUP BY ".$groupby:"")."
 			".($orderby != "" ? "ORDER BY ".$orderby:"")." ";
 			try {
+					$this->sql = $sql;
 					$pdos = $this->pdo->prepare($sql);
 					$pdos->execute($data);
-					$res = $pdos->fetchAll(PDO::FETCH_ASSOC);
-					return $res[0];
+					$res = $pdos->fetch(PDO::FETCH_ASSOC);
+					return $res;
 				} catch (Exception $e) {
 					$this->TriggerError($this->pdo->errorInfo(), __METHOD__,$e);
 			}
@@ -52,6 +53,7 @@ class DB{
 		".($where != "" ? "WHERE ".$where:"")." 
 		".($orderby != "" ? "ORDER BY ".$orderby:"")." ";
 		try {
+			$this->sql = $sql;
 			$pdos = $this->pdo->prepare($sql,$data);
 			$pdos->execute($data);
 			//$res = $pdos->fetchAll(PDO::FETCH_ASSOC);
@@ -71,7 +73,8 @@ class DB{
 	
 	public function wrappedSQLGET($sql,$data){
 		if(empty($data))$data=array();
-		try {
+		try {	
+				$this->sql = $sql;
 				$pdos = $this->pdo->prepare($sql);
 				$pdos->execute($data);
 				$res = $pdos->fetchAll(PDO::FETCH_ASSOC);
@@ -82,7 +85,8 @@ class DB{
 	}
 	
 	public function wrappedSQLINSERT($sql,$data){
-		try {
+		try {	
+				$this->sql = $sql;
 				$pdos = $this->pdo->prepare($sql);
 				$res = $pdos->execute($data);
 				$this->id = $this->pdo->lastInsertId();

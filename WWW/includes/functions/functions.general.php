@@ -23,8 +23,10 @@ function printr($array,$str=0){
 	}
 }
 
-function _ulrencode($string){
-	return $string;
+function _ulrencode($str){
+	$str = str_replace(' ','-',$str);
+	$str = preg_replace("/[\s\W]+/", "-", strtolower($str));
+	return $str;
 }
 function ismobile() {
 	static $is_mobile;
@@ -47,4 +49,40 @@ function ismobile() {
 	}
 
 	return $is_mobile;
+}
+
+function getToken(){
+	if(!empty($_SESSION["formToken"])){
+		return $_SESSION["formToken"];
+	}else{
+		$_SESSION["formToken"] = generatetoken();
+		return $_SESSION["formToken"];
+	}
+}
+
+function generatetoken(){
+	$token = sha1($_SERVER['REMOTE_ADDR'].md5(date("D M j G:i:s T Y")). md5(uniqid(mt_rand(rand(50,rand()),rand(500,23493244)), true)));
+	return $token;
+}
+
+function checkToken($token){
+	if($_SESSION["formToken"] == $token && !empty($token)){
+		$isValid = true;
+	}else{
+		$isValid = false;
+	}
+	return $isValid;
+}
+
+function insertToken(){
+	$this_buf='';
+	$this_buf='<input type="hidden" name="formToken" id="formToken" value="'.getToken().'" >';
+	return $this_buf;
+}
+function getPass($username,$pass){
+	return sha1(md5(bin2hex(strrev(stripslashes($username)))) . md5(stripslashes(strtoupper($pass))));
+}
+function urlPrep($str){
+	$str = trim($str,'/');
+	return $str;
 }

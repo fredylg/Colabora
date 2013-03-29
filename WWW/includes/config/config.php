@@ -3,7 +3,7 @@ session_start();
 set_include_path($_SERVER['DOCUMENT_ROOT']);
 $CONFIG = simplexml_load_string(file_get_contents('includes/config/config.settings.php',true));
 if($CONFIG->mode->production == 'FALSE'){
-	error_reporting(E_ALL);
+	//error_reporting(E_ALL);
 	ini_set('display_errors', 1);
 	$dbsettings=$CONFIG->databaseconfig->dev;
 	$SM_debug_mode = true; 
@@ -14,6 +14,8 @@ if($CONFIG->mode->production == 'FALSE'){
 	$SM_debug_mode = false;	echo'###';
 }
 
+
+
 require 'includes/functions/functions.general.php';
 require 'includes/classes/bd.class.php';
 require "includes/classes/smarty/Smarty.class.php";
@@ -22,7 +24,11 @@ require 'includes/classes/controllers/main.controller.class.php';
 require 'includes/classes/controllers/admin.controller.class.php';
 require 'includes/classes/controllers/application.controller.class.php';
 
+include 'includes/processes/processes-general.php';
 
+$_POST = clean($_POST);
+$_GET = clean($_GET);
+$_REQUEST = clean($_REQUEST);
 
 $DB = new DB($dbsettings);
 $SM = new Smarty();

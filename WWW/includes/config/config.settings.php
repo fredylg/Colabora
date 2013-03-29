@@ -22,12 +22,12 @@
 	<pages>
 	<static_page>
 		<url></url>
-		<template>homepage.tpl</template>
+		<template>header.tpl|homepage.tpl</template>
 		<page_id>1</page_id>
 	</static_page>
 	<static_page>
 		<url>home</url>
-		<template>homepage.tpl</template>
+		<template>header.tpl|homepage.tpl</template>
 		<page_id>1</page_id>
 	</static_page>
 	<static_page>
