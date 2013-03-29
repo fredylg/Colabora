@@ -19,14 +19,23 @@
 		    <database>COLABORA</database>
 		 </production> 
 	</databaseconfig>
-	<staticpages>
-	<url>home</url>
-	<pageid>1</pageid>
-	</staticpages>
-	<staticpages>
-	<url>login</url>
-	<pageid>2</pageid>
-	</staticpages>
+	<pages>
+	<static_page>
+		<url>home</url>
+		<template>homepage.tpl</template>
+		<pageID>1</pageID>
+	</static_page>
+	<static_page>
+		<url>home</url>
+		<template>homepage.tpl</template>
+		<pageID>1</pageID>
+	</static_page>
+	<static_page>
+		<url>login</url>
+		<template>login.tpl</template>
+		<pageID>2</pageID>
+	</static_page>
+	</pages>
 	<controllers>
 	 	<controller>admin</controller>
 	 	<controller>profile</controller>

@@ -31,8 +31,10 @@ class Controller{
 		foreach ($page as $name => $value) {
 			$this->SM->assign($name,$value);
 		}
-		die(printr((array)$config->staticpages));
+		die(printr((array)$config->pages));
 		$static_pages ;
+		
+		
 		if($this->url_params[0] != 'home' ){
 			return "staticpage.tpl";
 		}else{

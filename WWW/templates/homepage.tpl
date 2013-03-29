@@ -19,7 +19,16 @@
    <!-- main container --> 
    <div id="main-container">
        <div class="row-fluid">
-       	{$page_content}
+       		<div class="span3 info-div offset1" id="first-div">
+               <p>vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia 				               consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia               dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius</p> 
+           </div>
+           <div class="span4 info-div" id="second-div">
+              <p>vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia              consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia              dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius </p>
+           </div>
+           <div class="span3 info-div" id="third-div">
+              <p>vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia               consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia              dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius 
+              </p>
+           </div>
       </div>
    </div><script>
       jQuery(document).ready(function($) {
