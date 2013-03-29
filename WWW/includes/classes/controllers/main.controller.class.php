@@ -1,8 +1,8 @@
 <?php
 class Controller{
-	public $template='';
+	public $templates = array();
 	function __construct($url,$controllers){
-		GLOBAL $DB,$SM;
+		GLOBAL $DB,$SM,$CONFIG ;
 		$this->DB = $DB;
 		$this->SM = $SM;
 		$this->url_params = explode('/', $url);
@@ -12,34 +12,36 @@ class Controller{
 				die('NO SUBCONTROLLER');
 			}
 		}
-		if($this->url_params[0] == '' )$this->url_params[0]='home';
-		$this->template ='header.tpl|nav.tpl|';
-		$this->template .= $this->localAction($this->url_params);
-		return true;
-	}
-	function localAction(){
-		$pages = $this->DB->GetTable('tbl_page', 'page_deleted is null');
-		foreach ($pages as $page) {
-			if($page['page_url']  == $this->url_params[0]){
-				return $this->loadPage($page);
+		$this->templates[] ='header.tpl';
+		$this->templates[] ='nav.tpl';
+		//is a page...  //is static?
+		foreach ($CONFIG->pages->static_page as $sp) {
+			if($sp->url  == $this->url_params[0]){
+				$this->templates[] = (string)$sp->template;
+				$page_data = $this->DB->GetRow('tbl_page', ' id= :id',array('id' => (string)$sp->page_id));
+				foreach ($page_data as $name => $value) {
+					$this->SM->assign($name,$value);
+				}
+				return true;
 			}
 		}
-		//TODO -  DEAL WITH LISTING ITEMS
-	}
-	function loadPage($page){
-		GLOBAL $config;
-		foreach ($page as $name => $value) {
-			$this->SM->assign($name,$value);
+		//fixcontent page ?
+		$db_pages = $this->DB->GetTable('tbl_page', "page_deleted is null ");
+		foreach ($db_pages as $page_data) {
+			if($page_data['page_url']  == $this->url_params[0]){
+				foreach ($page_data as $name => $value) {
+					$this->SM->assign($name,$value);
+					$this->templates[] = (string)$CONFIG->pages->db_page->template;
+					return true;
+				}
+			}
 		}
-		die(printr((array)$config->pages));
-		$static_pages ;
-		
-		
-		if($this->url_params[0] != 'home' ){
-			return "staticpage.tpl";
-		}else{
-			return "homepage.tpl";
-		}
-			
+		//TODO listing pages ...
+		die('URL NOT FOUND');
 	}
+	
+	function template(){
+		return implode('|', $this->templates);
+	}
+
 }

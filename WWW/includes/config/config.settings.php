@@ -21,20 +21,23 @@
 	</databaseconfig>
 	<pages>
 	<static_page>
-		<url>home</url>
+		<url></url>
 		<template>homepage.tpl</template>
-		<pageID>1</pageID>
+		<page_id>1</page_id>
 	</static_page>
 	<static_page>
 		<url>home</url>
 		<template>homepage.tpl</template>
-		<pageID>1</pageID>
+		<page_id>1</page_id>
 	</static_page>
 	<static_page>
 		<url>login</url>
 		<template>login.tpl</template>
-		<pageID>2</pageID>
+		<page_id>2</page_id>
 	</static_page>
+	<db_page>
+	<template>dbpage.tpl</template>
+	</db_page>
 	</pages>
 	<controllers>
 	 	<controller>admin</controller>

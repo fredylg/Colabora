@@ -1,16 +1,16 @@
 <?php
 session_start();
 set_include_path($_SERVER['DOCUMENT_ROOT']);
-$config = simplexml_load_string(file_get_contents('includes/config/config.settings.php',true));
-if($config->mode->production == 'FALSE'){
+$CONFIG = simplexml_load_string(file_get_contents('includes/config/config.settings.php',true));
+if($CONFIG->mode->production == 'FALSE'){
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
-	$dbsettings=$config->databaseconfig->dev;
+	$dbsettings=$CONFIG->databaseconfig->dev;
 	$SM_debug_mode = true; 
 	}else{
 	error_reporting(0);
 	ini_set('display_errors', 0);
-	$dbsettings=$config->databaseconfig->production;
+	$dbsettings=$CONFIG->databaseconfig->production;
 	$SM_debug_mode = false;	echo'###';
 }
 
