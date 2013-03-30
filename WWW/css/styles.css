@@ -126,3 +126,6 @@ border:solid thick black;
 #login h1,h2,h3,a{
 color:#49AFCD;
 }
+.error { 
+		  border: 1px solid #FF0000 !important;
+	  }

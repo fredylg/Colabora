@@ -6,7 +6,28 @@ if(checkToken($_POST['formToken']) === true	&& !empty($_POST['formToken'])){
 		case 'Login':
 		$redirect =	processLogin($_POST);
 		break;
+		case 'forgot-password':
+		$redirect =	processForgotPassword($_POST);	
+		break;	
+		case 'create-account':
+		$redirect='/create-account';
+		if(!empty($_POST['team'])){
+			$team_id = processCreateTeam($_POST['team']);	
+			if($team_id ==  false){
+				break;
+			}
+		}else{
+			$team_id = 0 ;
+		}
+		$user = processCreateUser($_POST);
+		if($user != false){
+			if($team_id != 0 ){
+				$res = processLinkUserTeam($user,$team_id);
+			}
+			$redirect = '/projects/home';	
+		} 
 		
+		break;	
 		
 	}
 	

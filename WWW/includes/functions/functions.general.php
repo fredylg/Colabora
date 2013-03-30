@@ -79,8 +79,9 @@ function insertToken(){
 	$this_buf='<input type="hidden" name="formToken" id="formToken" value="'.getToken().'" >';
 	return $this_buf;
 }
-function getPass($username,$pass){
-	return sha1(md5(bin2hex(strrev(stripslashes($username)))) . md5(stripslashes(strtoupper($pass))));
+function getPass($pass){
+	GlOBAL $CONFIG;
+	return sha1(md5(bin2hex(strrev($CONFIG->mode->salt))) . md5(stripslashes($pass)));
 }
 function urlPrep($str){
 	$str = trim($str,'/');

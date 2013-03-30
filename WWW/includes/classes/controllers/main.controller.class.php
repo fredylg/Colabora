@@ -13,7 +13,7 @@ class Controller{
 			}
 		}
 	//	$this->templates[] ='header.tpl';//only on index
-		$this->templates[] ='nav.tpl';
+		$this->templates[] ='pages/nav.tpl';
 		$this->templates[] ='footer.tpl';
 		
 		//is a page...  //is static?
@@ -43,7 +43,11 @@ class Controller{
 	}
 	
 	function template(){
-		return implode('|', $this->templates);
+		if(ismobile() == true){
+			return implode('|mobile/', $this->templates);
+		}else{
+			return implode('|pages/', $this->templates);	
+		}
 	}
 
 }

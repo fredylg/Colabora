@@ -4,6 +4,7 @@
 	<mode>
 		<production>FALSE</production>
 		<manageremail>fredylg@hotmail.com</manageremail>
+		<salt>FrhhGGM2i0XzNOXZqii124RXO4Lr5Lifrm0tjzRb</salt>
 	</mode>
 	<databaseconfig>
 		<dev>
@@ -22,7 +23,7 @@
 	<pages>
 	<static_page>
 		<url></url>
-		<template>header.tpl|homepage.tpl</template>
+		<template>header.tpl|pages/homepage.tpl</template>
 		<page_id>1</page_id>
 	</static_page>
 	<static_page>
@@ -34,6 +35,16 @@
 		<url>login</url>
 		<template>login.tpl</template>
 		<page_id>2</page_id>
+	</static_page>
+	<static_page>
+		<url>forgot-password</url>
+		<template>forgot-password.tpl</template>
+		<page_id>8</page_id>
+	</static_page>
+	<static_page>
+		<url>create-account</url>
+		<template>create-account.tpl</template>
+		<page_id>9</page_id>
 	</static_page>
 	<db_page>
 	<template>dbpage.tpl</template>

@@ -12,6 +12,7 @@ $SM->assign("token",$token);
 
 
 $C = new Controller($_GET['url'], $CONFIG->controllers);
-$SM->display("extends:page.tpl|".$C->template());
+//die($C->template());
+$SM->display("extends:pages/page.tpl|".$C->template());
 
 
